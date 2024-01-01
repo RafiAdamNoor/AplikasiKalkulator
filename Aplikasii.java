@@ -10,6 +10,7 @@ public class Aplikasii extends JFrame implements ActionListener {
     private int operator;
 
     public Aplikasii() {
+
         setTitle("Kalkulator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 400);
@@ -31,9 +32,19 @@ public class Aplikasii extends JFrame implements ActionListener {
                 "C", "0", "=", "+"
         };
 
+        // Bagian dalam konstruktor Aplikasii()
+// Mengatur warna dan font
+        textField.setBackground(Color.WHITE);
+        textField.setForeground(Color.BLACK);
+        textField.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+
+// Memperindah tombol
         for (String label : buttonLabels) {
             JButton button = new JButton(label);
             button.addActionListener(this);
+            button.setBackground(Color.BLACK);
+            button.setForeground(Color.WHITE);
+            button.setFont(new Font("Arial", Font.BOLD, 16));
             buttonPanel.add(button);
         }
 
@@ -106,6 +117,7 @@ public class Aplikasii extends JFrame implements ActionListener {
                 break;
         }
     }
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
